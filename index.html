@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agro Forte - Futuro Sustentável</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <div class="acessibilidade">
+        <button onclick="aumentarFonte()" title="Aumentar Fonte">A+</button>
+        <button onclick="diminuirFonte()" title="Diminuir Fonte">A-</button>
+        <button onclick="contraste()" title="Alternar Contraste">🌙</button>
+        <button onclick="lerPagina()" title="Ouvir Página">🔊</button>
+    </div>
+
+    <nav>
+        <h1>🌱 Agro Forte</h1>
+        <ul>
+            <li><a href="#inicio">Início</a></li>
+            <li><a href="#sustentabilidade">Sustentabilidade</a></li>
+            <li><a href="#tecnologias">Tecnologias</a></li>
+            <li><a href="#brasil">Agro no Brasil</a></li>
+            <li><a href="#dashboard">Dashboard</a></li>
+            <li><a href="#simulador">Simulador</a></li>
+            <li><a href="#galeria">Galeria</a></li>
+            <li><a href="#contato">Contato</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero" id="inicio">
+        <div class="hero-content">
+            <div>
+                <h2>Agro Forte</h2>
+                <h3>Futuro Sustentável</h3>
+                <p>
+                    Produzir alimentos, preservar o meio ambiente e garantir qualidade de vida para as futuras gerações.
+                </p>
+                <button>Conheça o Projeto</button>
+            </div>
+            <div class="globo3d"></div>
+        </div>
+    </header>
+
+    <section id="sustentabilidade">
+        <h2>Sustentabilidade</h2>
+        <div class="container-cards">
+            <div class="card3d">
+                <h3>🌱 Reflorestamento</h3>
+                <p>Recuperação de áreas degradadas e preservação de biomas nativos.</p>
+            </div>
+            <div class="card3d">
+                <h3>♻️ Energia Limpa</h3>
+                <p>Uso estratégico de energia solar, eólica e biomassa no campo.</p>
+            </div>
+            <div class="card3d">
+                <h3>💧 Economia de Água</h3>
+                <p>Sistemas de irrigação inteligente e gotejamento sustentável.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="tecnologias">
+        <h2>Tecnologias do Campo</h2>
+        <div class="container-cards">
+            <div class="card3d">
+                <h3>🚁 Drones</h3>
+                <p>Monitoramento preciso e mapeamento das lavouras em tempo real.</p>
+            </div>
+            <div class="card3d">
+                <h3>📡 Sensores</h3>
+                <p>Análise profunda do solo, nutrientes e controle exato de umidade.</p>
+            </div>
+            <div class="card3d">
+                <h3>🤖 Inteligência Artificial</h3>
+                <p>Previsões climáticas e tomada de decisões baseada em dados eficientes.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="brasil">
+        <h2>Agro no Brasil</h2>
+        <div class="mapa">
+            <div class="regiao norte">
+                Norte
+                <span>Bioeconomia e floresta em pé.</span>
+            </div>
+            <div class="regiao nordeste">
+                Nordeste
+                <span>Fruticultura e agro adaptado ao semiárido.</span>
+            </div>
+            <div class="regiao centro">
+                Centro-Oeste
+                <span>Liderança na produção de grãos e grãos sustentáveis.</span>
+            </div>
+            <div class="regiao sudeste">
+                Sudeste
+                <span>Café, cana-de-açúcar e hubs de inovação tecnológica.</span>
+            </div>
+            <div class="regiao sul">
+                Sul
+                <span>Forte cooperativismo agrícola e diversidade de culturas.</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="dashboard">
+        <h2>Dashboard de Produção</h2>
+        <div style="max-width: 800px; margin: auto; background: var(--card); padding: 20px; border-radius: 20px;">
+            <canvas id="grafico"></canvas>
+        </div>
+    </section>
+
+    <section id="simulador">
+        <h2>Simulador Ecológico</h2>
+        <div style="text-align: center; max-width: 500px; margin: auto; background: var(--card); padding: 30px; border-radius: 20px;">
+            <p style="margin-bottom: 15px;">Insira a quantidade de árvores plantadas para calcular o impacto ambiental:</p>
+            <input type="number" id="arvores" placeholder="Ex: 10" style="padding: 10px; width: 100%; max-width: 200px; border-radius: 5px; border: none; margin-bottom: 15px; font-size: 1rem;">
+            <br>
+            <button onclick="simular()">Calcular Impacto</button>
+            <h3 id="resultado" style="margin-top: 20px; color: var(--amarelo);"></h3>
+        </div>
+    </section>
+
+    <section id="galeria">
+        <h2>Galeria de Fotos</h2>
+        <div class="container-cards">
+            <div class="card3d">
+                <h3>🌾 Agricultura</h3>
+                <p>Produção responsável e consciente.</p>
+            </div>
+            <div class="card3d">
+                <h3>🚜 Tecnologia</h3>
+                <p>Maquinário moderno focado na eficiência de recursos.</p>
+            </div>
+            <div class="card3d">
+                <h3>🌳 Preservação</h3>
+                <p>Mais de 66% da vegetação nativa mapeada e protegida.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contato">
+        <h2>Contato e Informações</h2>
+        <p style="text-align:center; font-size: 1.2rem;">
+            Projeto desenvolvido para o tema:<br>
+            <strong>Agro Forte, Futuro Sustentável</strong>.
+        </p>
+    </section>
+
+    <footer>
+        <h2>🌱 Agro Forte</h2>
+        <p>Produzir hoje para preservar o amanhã.</p>
+        <p style="opacity: 0.7; font-size: 0.9rem; margin-top: 10px;">Projeto Agrinho 2026</p>
+    </footer>
+
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget();
+    </script>
+
+    <script src="script.js"></script>
+</body>
+</html>
