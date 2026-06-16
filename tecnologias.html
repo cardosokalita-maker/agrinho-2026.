@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes da Tecnologia - Agro Forte</title>
+    <link rel="stylesheet" href="index.css">
+    <style>
+        .conteudo-detalhe {
+            max-width: 800px;
+            margin: 50px auto;
+            background: var(--card);
+            padding: 40px;
+            border-radius: 25px;
+            box-shadow: 0 15px 35px rgba(0,0,0,.3);
+        }
+        .btn-voltar {
+            margin-bottom: 30px;
+            display: inline-block;
+            text-decoration: none;
+            text-align: center;
+        }
+    </style>
+</head>
+<body style="padding: 50px 10%;">
+
+    <header>
+        <a href="index.html" class="btn-voltar"><button>⬅ Voltar ao Início</button></a>
+    </header>
+
+    <main class="conteudo-detalhe">
+        <h1 id="titulo-detalhe" style="color: var(--verde); font-size: 3rem; margin-bottom: 20px;">Carregando...</h1>
+        <p id="texto-detalhe" style="font-size: 1.3rem; line-height: 1.8; color: var(--texto);"></p>
+    </main>
+
+    <script>
+        // Captura o parâmetro enviado pela URL (ex: ?tipo=drones)
+        const urlParams = new URLSearchParams(window.location.search);
+        const tecnologia = urlParams.get('tipo');
+
+        // Banco de dados dos textos explicativos
+        const informacoes = {
+            drones: {
+                titulo: "🚁 Monitoramento com Drones",
+                texto: "Os drones revolucionaram o agronegócio. Eles sobrevoam a lavoura tirando fotos de alta resolução e usando câmeras térmicas. Isso ajuda o produtor a detectar falhas de plantio, focos de pragas e estresse hídrico (falta de água) em minutos, economizando combustível de tratores e aplicando defensivos agrícolas apenas onde realmente é necessário."
+            },
+            sensores: {
+                titulo: "📡 Sensores de Solo Inteligentes",
+                texto: "Instalados diretamente na terra, esses sensores medem em tempo real a umidade, a temperatura e a quantidade de nutrientes presentes no solo. Os dados são enviados para o celular do agricultor, permitindo que ele ligue a irrigação ou aplique adubo na quantidade exata, evitando desperdícios e protegendo os recursos naturais."
+            },
+            ia: {
+                titulo: "🤖 Inteligência Artificial no Campo",
+                texto: "Sistemas baseados em IA cruzam dados históricos de satélites, previsões do tempo e condições do solo para prever com precisão o melhor dia para o plantio e a colheita. Além disso, algoritmos conseguem prever o surgimento de doenças antes mesmo que elas fiquem visíveis a olho nu, trazendo total segurança ao produtor."
+            }
+        };
+
+        // Alimenta a página com o texto correto
+        if (informacoes[tecnologia]) {
+            document.getElementById('titulo-detalhe').innerText = informacoes[tecnologia].titulo;
+            document.getElementById('texto-detalhe').innerText = informacoes[tecnologia].texto;
+        } else {
+            document.getElementById('titulo-detalhe').innerText = "Tecnologia não encontrada";
+            document.getElementById('texto-detalhe').innerText = "Por favor, volte para a página inicial e selecione uma tecnologia válida.";
+        }
+    </script>
+</body>
+</html>
